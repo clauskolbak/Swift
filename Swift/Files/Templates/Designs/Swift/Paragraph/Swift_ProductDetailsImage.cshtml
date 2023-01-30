@@ -299,7 +299,7 @@
 
 @helper RenderAsset(MediaViewModel asset, int assetNumber, string size = "desktop") { 
 	string theme = !string.IsNullOrWhiteSpace(Model.Item.GetRawValueString("ImageTheme")) ? " theme " + Model.Item.GetRawValueString("ImageTheme").Replace(" ", "").Trim().ToLower() : "";
-	string assetValue = asset.Value;
+	string assetValue = asset.Value.ToLower();
 
 	<div class="h-100 @(theme)">
 		@foreach (string format in supportedImageFormats) { //Images
